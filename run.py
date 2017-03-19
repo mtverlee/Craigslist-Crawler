@@ -16,7 +16,7 @@ from termcolor import colored
 import notifications.main as notifications
 
 # Settings.
-periodInMinutes = 5
+periodInMinutes = 60
 appToken = ""
 userToken = ""
 emailUsername = ""
