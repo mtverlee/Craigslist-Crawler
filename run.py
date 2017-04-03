@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup as bs4
 import os
 import time
 from termcolor import colored
-import notifications.main as notifications
+import notifiy.main as notifications
 
 # Settings.
 appToken = ""
