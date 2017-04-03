@@ -16,7 +16,6 @@ from termcolor import colored
 import notifications.main as notifications
 
 # Settings.
-periodInMinutes = 60
 appToken = ""
 userToken = ""
 emailUsername = ""
@@ -87,15 +86,10 @@ def checkForListings(url, listingStorageFile, crawlerName, sendNotification, sen
 
 # Run main function.
 if __name__ == '__main__':
-    notifications.sendPushoverNotification(appToken, userToken, 'The Craigslist Crawler is starting up.', 'Craigslist-Crawler')
-    while True:
-        checkForListings('https://westslope.craigslist.org/search/jjj?excats=12-1-2-1-7-1-1-1-1-1-19-1-1-3-2-3-2-2-39-25-1-1-1-1-1-1&search_distance=15&postal=81501', 'techListings.txt', 'Technology Jobs', True, False)
-        checkForListings('https://westslope.craigslist.org/search/jjj?search_distance=10&postal=81501&employment_type=2', 'generalPartTimeListings.txt', 'General Part-Time Jobs', True, False)
-        #checkForListings('https://westslope.craigslist.org/search/apa?hasPic=1&search_distance=10&postal=81501&max_price=700&availabilityMode=0', 'housingListings.txt', 'Housing', True, False)
-        checkForListings('https://westslope.craigslist.org/search/jjj?search_distance=10&postal=81501', 'generalListings.txt', 'General Jobs', True, False)
-        checkForListings('https://denver.craigslist.org/search/jjj?excats=11-1-1-2-1-7-1-1-1-1-1-19-1-1-1-2-2-3-2-2-14-25-25-1-1-1-1-1-1&is_telecommuting=1', 'denverTechRemoteListings.txt', 'Denver Technology Remote Jobs', True, False)
-        checkForListings('https://denver.craigslist.org/search/cta?hasPic=1&searchNearby=2&nearbyArea=319&nearbyArea=210&nearbyArea=713&nearbyArea=287&nearbyArea=288&nearbyArea=320&max_price=7000&auto_make_model=toyota+tacoma&max_auto_miles=175000&condition=10&condition=20&condition=30&condition=40&condition=50', 'tacomaListings.txt', 'Tacoma Listings', True, True)
-        checkForListings('https://denver.craigslist.org/search/cta?hasPic=1&searchNearby=2&nearbyArea=319&nearbyArea=210&nearbyArea=713&nearbyArea=287&nearbyArea=288&nearbyArea=320&max_price=7000&auto_make_model=toyota+4runner&max_auto_miles=175000&condition=10&condition=20&condition=30&condition=40&condition=50', '4runnerListings.txt', '4Runner Listings', True, True)
-        print("Sleeping for " + str(periodInMinutes) + " minutes...")
-        print(" ")
-        time.sleep(periodInMinutes * 60)
+    checkForListings('https://westslope.craigslist.org/search/jjj?excats=12-1-2-1-7-1-1-1-1-1-19-1-1-3-2-3-2-2-39-25-1-1-1-1-1-1&search_distance=15&postal=81501', 'techListings.txt', 'Technology Jobs', True, False)
+    checkForListings('https://westslope.craigslist.org/search/jjj?search_distance=10&postal=81501&employment_type=2', 'generalPartTimeListings.txt', 'General Part-Time Jobs', True, False)
+    #checkForListings('https://westslope.craigslist.org/search/apa?hasPic=1&search_distance=10&postal=81501&max_price=700&availabilityMode=0', 'housingListings.txt', 'Housing', True, False)
+    checkForListings('https://westslope.craigslist.org/search/jjj?search_distance=10&postal=81501', 'generalListings.txt', 'General Jobs', True, False)
+    checkForListings('https://denver.craigslist.org/search/jjj?excats=11-1-1-2-1-7-1-1-1-1-1-19-1-1-1-2-2-3-2-2-14-25-25-1-1-1-1-1-1&is_telecommuting=1', 'denverTechRemoteListings.txt', 'Denver Technology Remote Jobs', True, False)
+    checkForListings('https://denver.craigslist.org/search/cta?hasPic=1&searchNearby=2&nearbyArea=319&nearbyArea=210&nearbyArea=713&nearbyArea=287&nearbyArea=288&nearbyArea=320&max_price=7000&auto_make_model=toyota+tacoma&max_auto_miles=175000&condition=10&condition=20&condition=30&condition=40&condition=50', 'tacomaListings.txt', 'Tacoma Listings', True, True)
+    checkForListings('https://denver.craigslist.org/search/cta?hasPic=1&searchNearby=2&nearbyArea=319&nearbyArea=210&nearbyArea=713&nearbyArea=287&nearbyArea=288&nearbyArea=320&max_price=7000&auto_make_model=toyota+4runner&max_auto_miles=175000&condition=10&condition=20&condition=30&condition=40&condition=50', '4runnerListings.txt', '4Runner Listings', True, True)
